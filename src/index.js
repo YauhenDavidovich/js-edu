@@ -9,6 +9,14 @@ module.exports = function getTimeForEducation(
     knowsProgramming = true,
     config = {family: 4}
     ) {
-      return 0;
+      let weeks_to_become_master = 0;
+      let zeroLevel = 1300;
+      let basicLevel = 800;       
+      if (knowsProgramming === true) {
+        weeks_to_become_master = basicLevel/(config[focus]);
+      } else {
+        weeks_to_become_master = zeroLevel/(config[focus]);
+      }    
+      return Math.ceil(weeks_to_become_master);
   };
   
